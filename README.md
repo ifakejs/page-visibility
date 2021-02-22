@@ -44,6 +44,9 @@ pageVisibility.on(isVisible => {
 ## API
 WIP
 
+## TODO
+- [ ] Add `blur` & `focus` events for browsers that don't support the API or for users who have special needs
+
 ## Author
 
 👤 **ifake**

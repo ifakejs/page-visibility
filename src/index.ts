@@ -3,7 +3,8 @@ import {
   getBrowserPrefix,
   getHiddenPropertyName,
   getVisibilityEvent,
-  validConfigParams
+  validConfigParams,
+  PrefixParams
 } from './utils'
 import { ValidConfigParams } from './types'
 
@@ -16,7 +17,7 @@ class PageVisibility extends PubSub {
   public isVisible: boolean
   public config: ValidConfigParams
   public listener: EventListenerOrEventListenerObject
-  readonly browserPrefix: string | null
+  readonly browserPrefix: PrefixParams
   readonly hiddenPropertyName: string
   readonly visibilityEventName: string
   constructor() {
