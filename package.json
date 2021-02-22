@@ -6,7 +6,7 @@
   "module": "lib/index.esm.js",
   "scripts": {
     "lint": "eslint src --fix --ext .ts",
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "cross-env NODE_ENV=development rollup -c rollup.config.ts -w",
     "build": "cross-env NODE_ENV=production rollup -c rollup.config.ts",
     "build:types": "tsc -p tsconfig.type.json && api-extractor run && rimraf ./temp",

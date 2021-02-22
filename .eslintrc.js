@@ -24,6 +24,6 @@ module.exports = {
         ignoreReadBeforeAssign: false
       }
     ],
-    'no-unused-vars': 0
+    '@typescript-eslint/ban-ts-comment': 'off'
   }
 }

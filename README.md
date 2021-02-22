@@ -20,17 +20,17 @@ npm install @ifake/page-visibility
 
 ```js
 // We expose a global variable that can be used directly in the browser.
-const { pageVisibility, VISIBILITY_EVENT_NAME } = window.IFPageVisible
+const { pageVisibility } = window.IFPageVisible
 ```
 
 - ES6 Module
 
 ```js
-import { pageVisibility, VISIBILITY_EVENT_NAME } from '@ifake/page-visibility'
+import { pageVisibility } from '@ifake/page-visibility'
 ```
 
 ```js
-pageVisibility.on(VISIBILITY_EVENT_NAME, (isVisible) => {
+pageVisibility.on(isVisible => {
   if (isVisible) {
     // show event
     console.log("Browser's status is showing")
