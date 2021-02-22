@@ -26,9 +26,7 @@ export class PubSub {
     if (!fns) {
       return
     }
-    if (!fn) {
-      fns && (fns.length = 0)
-    } else {
+    if (fns?.length && typeof fn === 'function') {
       for (let i = 0; i < fns.length; i++) {
         const _fns = fns[i]
         if (_fns === fn) {

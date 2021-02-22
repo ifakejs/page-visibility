@@ -7,11 +7,14 @@ import {
 } from './utils'
 import { ValidConfigParams } from './types'
 
-export const VISIBILITY_EVENT_NAME = Symbol('VISIBILITY_EVENT_NAME')
+// eslint-disable-next-line no-unused-vars
+export type ObserveCb = (isVisible: boolean) => void
+
+const VISIBILITY_EVENT_NAME = '__VISIBILITY_EVENT_NAME__'
 
 class PageVisibility extends PubSub {
-  public config: ValidConfigParams
   public isVisible: boolean
+  public config: ValidConfigParams
   public listener: EventListenerOrEventListenerObject
   readonly browserPrefix: string | null
   readonly hiddenPropertyName: string
@@ -27,7 +30,7 @@ class PageVisibility extends PubSub {
     this.hiddenPropertyName = getHiddenPropertyName(this.browserPrefix)
     this.visibilityEventName = getVisibilityEvent(this.browserPrefix)
     this.listener = this.handleVisibilityChange.bind(this)
-    this.observe()
+    this.observable()
   }
 
   // placeholder
@@ -41,8 +44,14 @@ class PageVisibility extends PubSub {
     }
   }
 
-  observe() {
+  observable() {
     document.addEventListener(this.visibilityEventName, this.listener, false)
+  }
+
+  observe(cb: ObserveCb) {
+    this.on(VISIBILITY_EVENT_NAME, (isVisible: boolean) => {
+      cb && cb(isVisible)
+    })
   }
 
   unobserve() {
@@ -65,25 +74,21 @@ class PageVisibility extends PubSub {
   }
 
   onVisible() {
-    // prevent double execution
     if (this.isVisible) {
       return
     }
-    // change flag value
     this.isVisible = true
     this.trigger(VISIBILITY_EVENT_NAME, true)
   }
 
   onHidden() {
-    // prevent double execution
     if (!this.isVisible) {
       return
     }
-    // change flag value
     this.isVisible = false
     this.trigger(VISIBILITY_EVENT_NAME, false)
   }
 }
 const pageVisibility = new PageVisibility()
 
-export { pageVisibility, ValidConfigParams, PageVisibility, PubSub }
+export { pageVisibility, ValidConfigParams }
