@@ -1,9 +1,9 @@
 // Reference from https://github.com/vitejs/vite. Thanks vitejs.
 import * as path from 'path'
 import * as fs from 'fs'
-import * as enquirer from 'enquirer'
-import * as chalk from 'chalk'
-import * as execa from 'execa'
+import enquirer from 'enquirer'
+import chalk from 'chalk'
+import execa from 'execa'
 import semver from 'semver'
 const args = require('minimist')(process.argv.slice(2))
 
