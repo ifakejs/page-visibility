@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    "outDir": ".",
+    "rootDir": ".",
+    "target": "es5",
+    "module": "ESNext",
+    "lib": ["es2015", "es2016", "es2017", "dom"],
+    "downlevelIteration": true,
+    "strict": true,
+    "declaration": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "moduleResolution": "node",
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src",
+    "__test__"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "lib"
+  ]
+}
