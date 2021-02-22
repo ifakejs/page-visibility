@@ -33,7 +33,8 @@
     "page visibility",
     "page-lifecycle"
   ],
-  "author": "",
+  "license": "MIT",
+  "author": "BiYuqi",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

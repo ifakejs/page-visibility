@@ -30,15 +30,18 @@ import { pageVisibility } from '@ifake/page-visibility'
 ```
 
 ```js
-pageVisibility.on(isVisible => {
+pageVisibility.observe(isVisible => {
   if (isVisible) {
-    // show event
-    console.log("Browser's status is showing")
+    // Page show do something
+    console.log("Page show")
   } else {
-    // hidden event
-    console.log("Browser's status is hide")
+    // Page hide do something
+    console.log("Page show")
   }
 })
+
+// cancel listen
+pageVisibility.unobserve()
 ```
 
 ## API
