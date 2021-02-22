@@ -99,8 +99,8 @@ async function worker() {
     console.log(`(skipped)`)
   }
 
-  step('\nGenerating changelog...')
-  await run('yarn', ['changelog'])
+  // step('\nGenerating changelog...')
+  // await run('yarn', ['changelog'])
 
   const { stdout } = await run('git', ['diff'], { stdio: 'pipe' })
   if (stdout) {
