@@ -8,8 +8,10 @@ import {
 } from './utils'
 import { ValidConfigParams } from './types'
 
-// eslint-disable-next-line no-unused-vars
-export type ObserveCb = (isVisible: boolean) => void
+interface ObserveCb {
+  // eslint-disable-next-line no-unused-vars
+  (isVisible: boolean): () => void
+}
 
 const VISIBILITY_EVENT_NAME = '__VISIBILITY_EVENT_NAME__'
 
@@ -79,7 +81,7 @@ class PageVisibility extends PubSub {
       return
     }
     this.isVisible = true
-    this.trigger(VISIBILITY_EVENT_NAME, true)
+    this.trigger(VISIBILITY_EVENT_NAME, this.isVisible)
   }
 
   onHidden() {
@@ -87,7 +89,7 @@ class PageVisibility extends PubSub {
       return
     }
     this.isVisible = false
-    this.trigger(VISIBILITY_EVENT_NAME, false)
+    this.trigger(VISIBILITY_EVENT_NAME, this.isVisible)
   }
 }
 const pageVisibility = new PageVisibility()

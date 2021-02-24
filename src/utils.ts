@@ -1,7 +1,12 @@
 import { ValidConfigParams } from './types'
 
 type BrowserPrefixes = 'moz' | 'ms' | 'o' | 'webkit'
-type ReturnedHiddenProperty = 'mozHidden' | 'msHidden' | 'oHidden' | 'webkitHidden' | 'hidden'
+type ReturnedHiddenProperty =
+  | 'mozHidden'
+  | 'msHidden'
+  | 'oHidden'
+  | 'webkitHidden'
+  | 'hidden'
 type ReturnedVisibilityEvent =
   | 'mozvisibilitychange'
   | 'msvisibilitychange'
@@ -11,16 +16,20 @@ type ReturnedVisibilityEvent =
 export type PrefixParams = BrowserPrefixes | null
 
 // base prefix
-const browserPrefixes: Array<string> = ['moz', 'ms', 'o', 'webkit']
+const browserPrefixes: Array<BrowserPrefixes> = ['moz', 'ms', 'o', 'webkit']
 
-export function getHiddenPropertyName(prefix: PrefixParams): ReturnedHiddenProperty {
+export function getHiddenPropertyName(
+  prefix: PrefixParams
+): ReturnedHiddenProperty {
   if (prefix) {
     return <ReturnedHiddenProperty>`${prefix}Hidden`
   }
   return 'hidden'
 }
 
-export function getVisibilityEvent(prefix: PrefixParams): ReturnedVisibilityEvent {
+export function getVisibilityEvent(
+  prefix: PrefixParams
+): ReturnedVisibilityEvent {
   if (prefix) {
     return <ReturnedVisibilityEvent>`${prefix}visibilitychange`
   }
