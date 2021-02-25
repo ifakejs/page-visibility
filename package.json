@@ -4,6 +4,7 @@
   "description": "Wrapper for the Page Visibility API",
   "main": "dist/index.umd.js",
   "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "lint": "eslint src --fix --ext .ts",
     "test": "jest --coverage",
