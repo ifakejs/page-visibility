@@ -1,6 +1,6 @@
 {
   "name": "@ifake/page-visibility",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Wrapper for the Page Visibility API",
   "main": "dist/index.umd.js",
   "module": "lib/index.esm.js",
