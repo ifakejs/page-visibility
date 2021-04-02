@@ -20,7 +20,7 @@ npm install @ifake/page-visibility
 
 ```js
 // We expose a global variable that can be used directly in the browser.
-const { pageVisibility } = window.IFPageVisible
+const IFPageVisible = window.IFPageVisible
 ```
 
 - ES6 Module

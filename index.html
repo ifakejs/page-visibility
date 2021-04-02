@@ -17,8 +17,8 @@
 </div>
 <script src="/dist/index.umd.js"></script>
 <script>
-  const { pageVisibility } = window.IFPageVisible
-  pageVisibility.observe(isVisible => {
+  const IFPageVisible = window.IFPageVisible
+  IFPageVisible.observe(isVisible => {
     if (isVisible) {
       // show event
       console.log("Browser's status is showing")
